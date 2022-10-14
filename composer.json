@@ -1,0 +1,48 @@
+{
+    "name": "midia-simples/integrator-php-sdk",
+    "description": "Uma maneira de se comunicar de forma mais amigável com o sistema Integrator",
+    "keywords": ["php", "midiasimples", "integrator"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matheus Gomes",
+            "email": "mathvicentin@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.4"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.12",
+        "pestphp/pest": "^0.3.8",
+        "phpstan/phpstan": "^0.12.48",
+        "symfony/var-dumper": "^5.2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "MidiaSimples\\IntegratorSDK\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist"
+    },
+    "scripts": {
+        "lint": "php-cs-fixer fix -v",
+        "test:lint": "php-cs-fixer fix -v --dry-run",
+        "test:types": "phpstan analyse --ansi --memory-limit=0",
+        "test:unit": "pest --colors=always",
+        "test": [
+            "@test:lint",
+            "@test:types",
+            "@test:unit"
+        ]
+    }
+}
