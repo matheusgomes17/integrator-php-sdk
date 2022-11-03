@@ -27,6 +27,8 @@ class Client implements ClientContract
      */
     private $transport;
 
+    private array $credentials = [];
+
     /**
      * A list of output options, used with the xmlrpc_encode_request method.
      *
@@ -58,7 +60,7 @@ class Client implements ClientContract
      */
     public function call(string $name, array $args = []): ?object
     {
-        $request = Request::encode($name, $args);
+        $request = Request::encode($name, array_merge($args, $this->credentials));
 
         $response = $this->transport->post($this->url, $request);
 
@@ -107,5 +109,19 @@ class Client implements ClientContract
         $this->outputOptions = $outputOptions;
 
         return $this;
+    }
+
+    public function setCredentials($user, $password): self
+    {
+        $this->credentials['_user'] = $user;
+
+        $this->credentials['_passwd'] = $password;
+
+        return $this;
+    }
+
+    public function getCredentials(): array
+    {
+        return $this->credentials;
     }
 }
