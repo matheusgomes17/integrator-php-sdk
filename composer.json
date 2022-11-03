@@ -1,5 +1,5 @@
 {
-    "name": "midia-simples/integrator-php-sdk",
+    "name": "matheusgomes17/integrator-php-sdk",
     "description": "Uma maneira de se comunicar de forma mais amigável com o sistema Integrator",
     "keywords": ["php", "midiasimples", "integrator"],
     "license": "MIT",
