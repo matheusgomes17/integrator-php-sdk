@@ -5,7 +5,7 @@ Faça chamadas para a API do sistema ISP Integrator de forma simples através de
 
 Para fazer a instalação execute:
 ```bash
-composer require midia-simples/integrator-php-sdk
+composer require matheusgomes17/integrator-php-sdk
 ```
 
 Mantenha uma base de código moderna com o **PHP CS Fixer**:
