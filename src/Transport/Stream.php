@@ -33,6 +33,7 @@ class Stream implements TransportContract
         );
 
         $context = stream_context_create($options);
+
         $result = @file_get_contents($url, false, $context);
 
         if (false === $result) {
