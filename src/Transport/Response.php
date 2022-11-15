@@ -102,7 +102,7 @@ class Response
         }
 
         if (!empty($result->string)) {
-            $value = utf8_encode(urldecode((string)$result->string));
+            $value = utf8_decode(urldecode((string)$result->string));
         }
 
         if (!empty($result->double)) {
